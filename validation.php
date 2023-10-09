@@ -3,13 +3,13 @@
 function validerMotDePasse($motDePasseSaisi, $motDePasseEnregistre) {
     // Vérifier si le mot de passe saisi correspond au mot de passe enregistré
     if ($motDePasseSaisi === $motDePasseEnregistre) {
-        // Définir le "salt" statique
+        // Définir le salt 
         $salt = "ABC1234@";
 
-        // Concaténer le "salt" au mot de passe saisi
+        // Concaténer le salt au mot de passe saisi
         $motDePasseSalt = $motDePasseSaisi . $salt;
 
-        // Chiffrer le mot de passe avec SHA-1 (ou un autre algorithme de hachage de votre choix)
+        // Chiffrer le mot de passe avec SHA-1
         $motDePasseChiffre = sha1($motDePasseSalt);
 
         $message = "Mot de passe correct !<br>";
